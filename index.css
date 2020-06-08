@@ -1,0 +1,8 @@
+#diffDiv {
+  display: flex;
+}
+
+#diffDiv div {
+  flex: 1;
+  white-space: pre;
+}

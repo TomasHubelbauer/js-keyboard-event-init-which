@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     const initialized = serialize(initializedEvent);
     document.getElementById('initializedDiv').textContent = JSON.stringify(initialized, null, 2);
     const keys = [...Object.keys(originated), ...Object.keys(initialized)].filter((key, index, array) => array.indexOf(key) === index);
-    const compared = Object.fromEntries(keys.map(key => [key, originated[key] === initialized[key] ? null : [originated[key], initialized[key]]]));
+    const compared = Object.fromEntries(keys.map(key => [key, originated[key] === initialized[key] ? undefined : [originated[key], initialized[key]]]));
     document.getElementById('comparedDiv').textContent = JSON.stringify(compared, null, 2);
   });
 });
